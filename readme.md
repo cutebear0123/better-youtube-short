@@ -1,4 +1,4 @@
-# better youtube shortcut
+# better youtube short
 
 ## a chrome extension that help you move forward and backward in youtube video by 5 seconds
 
@@ -6,7 +6,7 @@
 
 ### 1. install the extension
 
-### 2. find a shortcut video
+### 2. find a short video
 
 ### 3. press `left arrow` to move backward 5 seconds
 
