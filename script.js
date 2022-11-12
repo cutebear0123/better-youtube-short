@@ -1,10 +1,11 @@
 function add_time(number) {
-  if (document.getElementsByTagName("video")[0].currentTime + number < 0) {
-    document.getElementsByTagName("video")[0].currentTime = 0;
-  } else {
-    document.getElementsByTagName("video")[0].currentTime += number;
+  for (const video of document.getElementsByTagName("video")) {
+    if (video.currentTime + number < 0) {
+      video.currentTime = 0;
+    } else {
+      video.currentTime += number;
+    }
   }
-  console.log(document.getElementsByTagName("video")[0].currentTime);
 }
 
 document.onkeydown = function (e) {

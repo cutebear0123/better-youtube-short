@@ -1,13 +1,17 @@
-tabs = chrome.tabs.query(
-  { active: true, currentWindow: true },
-  function (tabs) {
-    chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
-      if (tab.url.startsWith("https://www.youtube.com/shorts/")) {
+chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
+  // if url match regex https:\/\/\b(m|www)\b\.youtube\.com\/shorts\/.{11}
+  if (tab.url.match(/https:\/\/\b(m|www)\b\.youtube\.com\/shorts\/.{11}/)) {
+    chrome.scripting.executeScript({
+      target: { tabId: tabId, allFrames: true },
+      files: ["script.js"],
+    });
+    chrome.storage.local.get("autoSwitchSpeed", function (result) {
+      if (result["autoSwitchSpeed"] === true) {
         chrome.scripting.executeScript({
           target: { tabId: tabId, allFrames: true },
-          files: ["script.js"],
+          files: ["autoswitchspeed.js"],
         });
       }
     });
   }
-);
+});
