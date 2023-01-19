@@ -12,6 +12,8 @@
 
 ### 4. press `right arrow` to move forward 5 seconds
 
+### 5. press number key to move
+
 ## note: this only work with keyboard
 
 ## click on the extension icon to enable/disable auto switch speed

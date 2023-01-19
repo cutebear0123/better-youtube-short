@@ -10,3 +10,4 @@ function setting_button(id) {
   });
 }
 setting_button("autoSwitchSpeed");
+setting_button("noloop");
